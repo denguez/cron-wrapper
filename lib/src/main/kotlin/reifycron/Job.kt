@@ -5,7 +5,7 @@ import it.justwrote.kjob.dsl.JobContext
 
 typealias CronJobExecution = suspend JobContext<CronJob>.() -> Unit
 
-class CronJob(name: String, expression: String) : KronJob(name, expression) {
+open class CronJob(name: String, expression: String) : KronJob(name, expression) {
     companion object {
         suspend fun everyMinute(minute: Int, name: String): CronJob {
             requireNatural(minute)
