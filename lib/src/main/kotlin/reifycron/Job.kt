@@ -2,10 +2,15 @@ package reifycron
 
 import it.justwrote.kjob.KronJob
 import it.justwrote.kjob.dsl.JobContext
+import net.intelie.omnicron.*
+import java.time.Instant
+import java.time.LocalDateTime
 
 typealias CronJobExecution = suspend JobContext<CronJob>.() -> Unit
 
 open class CronJob(name: String, expression: String) : KronJob(name, expression) {
+    val cron = Cron(expression);
+    
     companion object {
         suspend fun everyMinute(minute: Int, name: String): CronJob {
             requireNatural(minute)
@@ -29,7 +34,7 @@ open class CronJob(name: String, expression: String) : KronJob(name, expression)
         suspend fun weekly(time: HourTime, days: Set<Day>, name: String): CronJob {
             requireTimeRange(time)
             require(days.isNotEmpty()) { "Empty day set" }
-            val expression = "0 ${time.minute} ${time.hour} ? * ${format(days)}}"
+            val expression = "0 ${time.minute} ${time.hour} ? * ${Day.format(days)}}"
             return CronJob(name, expression)
         }
     }

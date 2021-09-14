@@ -20,6 +20,8 @@ dependencies {
     implementation("it.justwrote:kjob-core:0.2.0")
     implementation("it.justwrote:kjob-mongo:0.2.0")
     implementation("it.justwrote:kjob-kron:0.2.0")
+
+    implementation("net.intelie.omnicron:omnicron:0.1")
     
     // Kotlin
     implementation(platform(kotlin("bom")))
