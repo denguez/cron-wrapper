@@ -5,11 +5,11 @@ import it.justwrote.kjob.kjob
 import it.justwrote.kjob.kron.Kron
 import it.justwrote.kjob.kron.KronModule
 
-class CronService(private val mongoConnectionURL: String ) {
+class CronService(private val connectionURL: String ) {
     private val service by lazy {
         kjob(Mongo) {
             extension(KronModule)
-            connectionString = mongoConnectionURL
+            connectionString = connectionURL
             databaseName = "reify-cron"
             jobCollection = "reify-jobs"
             lockCollection = "reify-locks"
