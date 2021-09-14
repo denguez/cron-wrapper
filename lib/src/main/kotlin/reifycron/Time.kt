@@ -11,10 +11,10 @@ enum class Day {
     }
 }
 
-fun CronJob.previousExecution(): LocalDateTime {
-    return cron.prev(LocalDateTime.now())
+fun CronJob.previousExecution(date: LocalDateTime): LocalDateTime {
+    return cron.prev(date)
 }
 
-fun CronJob.nextExecution(): LocalDateTime {
-    return cron.next(LocalDateTime.now())
+fun CronJob.nextExecution(date: LocalDateTime): LocalDateTime {
+    return cron.next(date)
 }
