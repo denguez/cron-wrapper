@@ -2,7 +2,7 @@ package reifycron
 
 import it.justwrote.kjob.KronJob
 import it.justwrote.kjob.dsl.JobContext
-import net.intelie.omnicron.*
+import net.intelie.omnicron.Cron
 import java.time.Instant
 import java.time.LocalDateTime
 
