@@ -9,7 +9,7 @@ open class CronJob(name: String, expression: String) : KronJob(name, expression)
     companion object {
         suspend fun everyMinute(minute: Int, name: String): CronJob {
             requireNatural(minute)
-            val expression = "0 ${now().minute + 1}/$minute * * * ?"
+            val expression = "0 0/$minute * * * ?"
             return CronJob(name, expression)
         }
 

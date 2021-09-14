@@ -6,8 +6,6 @@ import java.time.ZoneId
 
 class HourTime(val hour: Int, val minute: Int)
 
-fun now() = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault())
-
 enum class Day {
     MON, TUE, WED, THU, FRI, SAT, SUN
 }
