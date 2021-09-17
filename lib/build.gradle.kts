@@ -21,14 +21,11 @@ dependencies {
     implementation("it.justwrote:kjob-mongo:0.2.0")
     implementation("it.justwrote:kjob-kron:0.2.0")
 
-    implementation("com.cronutils:cron-utils:9.1.5")
+    api("com.cronutils:cron-utils:9.1.5")
     
     // Kotlin
     implementation(platform(kotlin("bom")))
     implementation(kotlin("stdlib-jdk8"))
-
-    // Database 
-    implementation("com.github.denguez:exposed-wrapper:master-SNAPSHOT")
 }
 
 publishing {
